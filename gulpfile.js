@@ -36,12 +36,15 @@ gulp.task('watch:sass', function () {
 });
 
 gulp.task('sass', function(){
-	gulp.src(paths.style.all)
-		.pipe(sourcemaps.init())
-		.pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.write('.'))
+    gulp.src(paths.style.all)
+
+        .pipe(sourcemaps.init())
+	    .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
+
+	    .pipe(sourcemaps.write('.'))
+        
 		.pipe(gulp.dest(paths.style.output));
-		console.log('a');
+		console.log('c');
 });
 
 
