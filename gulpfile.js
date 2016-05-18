@@ -25,16 +25,6 @@ gulp.task('lint', function(){
 		.pipe(jshint.reporter(jshintReporter));
 });
 
-// gulp watcher for lint
-gulp.task('watch:lint', function () {
-	gulp.watch(paths.src, ['lint']);
-});
- 
-
-gulp.task('watch:sass', function () {
-	gulp.watch(paths.style.all, ['sass']);
-});
-
 gulp.task('sass', function(){
     gulp.src(paths.style.all)
 
@@ -49,11 +39,10 @@ gulp.task('sass', function(){
 
 
 gulp.task('runKeystone', shell.task('node keystone.js'));
-gulp.task('watch', [
 
-  'watch:sass',
-  'runKeystone',
-  'watch:lint'
-]);
+gulp.task('watch', function () {
+    gulp.watch(paths.style.all, ['sass']);
+    gulp.watch(paths.src, ['lint']);
+});
 
 gulp.task('default', ['watch', 'runKeystone']);
