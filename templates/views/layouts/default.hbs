@@ -13,67 +13,118 @@
 		{{{isAdminEditorCSS user}}}
 
 	</head>
-	<body>
+<body>
 
-        <header>
-            <div class="container">
+    <header>
+        <div class="container">
+            <nav>
+                <img class="logo" src="images/oldlogo.svg" />
+                <ul>
+                    <li><a href="#!">who we are</a></li>
+                    <li><a href="#!">why roboticket</a></li>
+                    <li><a href="#!">clients</a></li>
+                    <li><a href="#!">contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <input type="checkbox" class="menuTrigger" id="menuTrigger" />
+    <label for="menuTrigger" class="menuTriggerLabel"></label>
 
-                <nav>
+    <main>
+        <section class="animate-in-screen"></section>
+        <section class="slide slide-1">
 
-                    <img class="logo" src="images/oldlogo.svg" />
-                    <ul>
-                        <li>1</li>
-                    </ul>
-                </nav>
+            <div class="center-height container left-center">
+
+                <h1><img class="logo" src="images/signature.svg" />The innovative <b>ticketing</b><br /> and <b>mass events management system.</b></h1>
+
             </div>
-            
 
-        </header>
-		<main>
-           <!--<section class="animate-in-screen"></section>-->
-            <section class="slide slide-1">
-                
-                <div class="center-height container text-center">
-                    
-                    <h1>The innovative ticketing and mass events management system</h1>
-                    
-                </div>
-               
+            <div class="logo-overlay fullscreen"></div>
 
-                <div class="video-overlay fullscreen"></div>
-                <video class="fullscreen" autoplay loop>
-                    <source src="images/video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </section>
-           
-            <section class="slide slide-2">
-                <div class="container text-center">
-                     <div class="counter">User registered: 521 021 | Ticket sold: 123 872 321  | Club hosted: 8</div>
-                   
-                </div>
-            </section>
-            <section class="slide slide-3">
-                <div class="container"> 
-                    <h3>slajd 3</h3>
-                </div>
-            </section>
-            <section class="slide slide-4">
-                <div class="container">
-                    <h2>slajd 4</h2>
-                </div>
-            </section>
-		</main>
+            <div class="video-overlay fullscreen"></div>
+            <video class="fullscreen" autoplay loop>
+                <source src="images/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
 
-		<footer>
+            <div class="text-center counter">
+
+                <div class="container">User registered: 521 021 | Ticket sold: 123 872 321  | Club hosted: 8</div>
+
+            </div>
+
+        </section>
+
+        <section class="slide slide-2">
+            <div class="container">
+                <h2>Who we are</h2>
+                <p>
+                    Roboticket is a complex ticketing system for sports clubs and venues made with full understanding of club’s needs.  We are a software company, delivering ticketing and access control since 2009.
+                </p>
+                <h3>Roboticket is exclusive representative of FortressGB in Poland.</h3>
+            </div>
+        </section>
+        <section class="slide slide-3">
+            <div class="container">
+                <h2>The difference</h2>
+                <p>We are flexible and we can adapt to your specific needs, we understand that ticketing is one of the main branch of sport clubs activities. Implementing new ideas is making us better and better every day, our knowledge we share with our clients.</p>
+
+                <p>We are hosted on Amazon Web Services with dedicated plans depending of club size and fans range. AWS logo</p>
+
+                <p>
+                    Our software is open for any third party integration that will help develop a better solution for our clients. Today’s integration already helps our client to improve communication with fans.
+                    Intercom Logo, Mailchimp Logo
+                </p>
+            </div>
+        </section>
+        <section class="slide slide-4">
+            <div class="container">
+                <h2>slajd 4</h2>
+            </div>
+        </section>
+        <footer>
             <div class="container">
                 <h2>footer</h2>
             </div>
-           
+
         </footer>
+    </main>
 
 
-		<script src="/js/jquery/jquery-1.11.3.min.js"></script>
-		{{{isAdminEditorJS user}}}
-	</body>
+
+
+    <script src="/js/jquery/jquery-1.11.3.min.js"></script>
+    {{{isAdminEditorJS user}}}
+</body>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+                $(window).on('load scroll resize', function () {
+
+                    if ($(window).scrollTop() >= $(window).height()) {
+
+                        $('header').addClass("menuOnTop");
+
+                    } else {
+                        $('header').removeClass("menuOnTop");
+
+                    }
+                 
+                });
+                //$("header ul li").each(function () {
+                //    $(this).width($(this).children().innerWidth());
+                //});
+                //$("header ul li a").mouseenter(function () {
+                //    $(this).width($(this).parent().innerWidth());
+                //    $(this).addClass("active");
+                //});
+                //$("header ul li a").mouseleave(function () {
+                //    $(this).removeClass("active");
+                //    $(this).addClass("no-padding");
+                //});
+            
+        });
+    </script>
 </html>
