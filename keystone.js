@@ -14,7 +14,6 @@ keystone.init({
 
 	'name': 'RoboTicket',
 	'brand': 'RoboTicket',
-	
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',

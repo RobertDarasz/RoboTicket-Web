@@ -8,9 +8,7 @@ var sass = require('gulp-sass');
 
 
 var paths = {
-	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json']
-
-,
+	'src':['./models/**/*.js','./routes/**/*.js', 'keystone.js', 'package.json'],
 	'style': {
 		all: './public/styles/**/*.scss', 
 		output: './public/styles/'
@@ -34,7 +32,6 @@ gulp.task('sass', function(){
 	    .pipe(sourcemaps.write('.'))
         
 		.pipe(gulp.dest(paths.style.output));
-		console.log('c');
 });
 
 
@@ -45,4 +42,4 @@ gulp.task('watch', function () {
     gulp.watch(paths.src, ['lint']);
 });
 
-gulp.task('default', ['watch', 'runKeystone']);
+gulp.task('default', ['sass', 'watch', 'runKeystone']);

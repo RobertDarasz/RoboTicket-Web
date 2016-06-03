@@ -35,44 +35,71 @@
         <section class="animate-in-screen"></section>
         <section class="slide slide-1">
 
-            <div class="center-height container left-center" data-stellar-ratio="-0.8" >
+            <div class="center-height container left-center">
 
-                <h1 class="animate bounceInUp" data-wow-delay=".5s"><img class="logo" src="images/signature.svg" />The innovative <b>ticketing</b><br /> and <b>mass events management system.</b></h1>
+                <!--<h1 class="animate bounceInUp" data-wow-delay=".5s"><img class="logo" src="images/signature.svg" />The innovative <b>ticketing</b><br /> and <b>mass events management system.</b></h1>-->
 
             </div>
 
 
-            <video class="fullscreen" autoplay loop  >
+            <video class="fullscreen" autoplay loop>
                 <source src="images/video.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
 
-            <div class="text-center counter">
+            <div class="text-center animation-thingy" data-wow-delay="0.8s">
 
-                <div class="container">
-                    <div id="clockdiv" class="animate bounceInUp" data-wow-delay=".5s">
-                        <div>
-                            <span class="days">521 021</span>
-                            <div class="smalltext">Users registered</div>
-                        </div>
-                        <div>
-                            <span class="hours">123 872 321</span>
-                            <div class="smalltext">Tickets sold</div>
-                        </div>
-                        <div>
-                            <span class="minutes">8</span>
-                            <div class="smalltext">Clubs hosted</div>
+                <div class="container ">
+                    <!--<div id="clockdiv" class="animate bounceInUp" data-wow-delay=".5s">
+                    <div>
+                        <span class="days">521 021</span>
+                        <div class="smalltext">Users registered</div>
+                    </div>
+                    <div>
+                        <span class="hours">123 872 321</span>
+                        <div class="smalltext">Tickets sold</div>
+                    </div>
+                    <div>
+                        <span class="minutes">8</span>
+                        <div class="smalltext">Clubs hosted</div>
+                    </div>
+                </div>-->
+
+                    <div class='ticket-card animate bounceInDown' data-wow-delay="0.8s">
+                        <h2><img class="logo" src="images/signature.svg" />The innovative <b>ticketing</b><br /> and <b>mass events management system.</b></h2>
+                    </div>
+                    <div class="bottom-part"></div>
+                    <div class="ticket-scanner">
+                        <div class="top-part">
+                            <div class="laser laser-1">
+
+                            </div>
+                            <div class="laser-2 laser">
+
+                            </div>
+                            <div class="laser-3 laser">
+
+                            </div>
+                            <div class="shadow"></div>
+                            <div class="counter">
+                                <span class="title">
+                                    tickets sold
+                                </span>
+                                <div class="digits">
+                                    123444556
+                                </div>
+                            </div>
+                            <span class="light"></span>
                         </div>
                     </div>
-                 
-                </div>
+                    </div>
 
-            </div>
+                </div>
 
         </section>
 
         <section class="slide slide-2">
-            <div class="container">
+            <div class="container animate bounceInDown">
                 <h2>Who we are</h2>
                 <p>
                     Roboticket is a complex ticketing system for sports clubs and venues made with full understanding of club’s needs.  We are a software company, delivering ticketing and access control since 2009.
@@ -94,7 +121,7 @@
                 </p>
             </div>
             <div class="scene fullscreen " data-wowa-duration="2s" data-stellar-background-ratio="1.2" data-stellar-vertical-offset="800"></div>
-            <div class="crowd fullscreen" data-wowa-duration="2s" data-stellar-background-ratio="1.4" data-stellar-vertical-offset="-900"></div>
+            <div class="crowd fullscreen" data-wowa-duration="2s" data-stellar-background-ratio="1.4" data-stellar-vertical-offset="-1300"></div>
 
         </section>
         <section class="slide slide-4" data-stellar-offset-parent="true" data-stellar-vertical-offset="270">
@@ -139,6 +166,8 @@
     <script src="/js/jquery/jquery-1.11.3.min.js"></script>
     <script src="/js/template/hammer.js"></script>
     <script src="/js/template/parallax.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/debug.addIndicators.min.js"></script>
     <script src="/js/template/wow.js"></script>
     <script src="/js/template/scripts.js"></script>         
 

@@ -134,7 +134,7 @@ main{
     } 
     .slide.slide-1 {  
 		width:100%;
-		min-height:100vh; 
+		min-height:calc(100vh - 100px); 
 		overflow:hidden;
 		video.fullscreen {  
 			position: fixed;  
@@ -151,7 +151,7 @@ main{
 		.center-height {
 			z-index:2;
 			position:relative;
-            top:30vh;
+            top:50vh;
 			h1 {
 				font-weight:300;
 				font-size:3rem;
@@ -172,14 +172,155 @@ main{
 				}
 			}
 		}
-		.counter {
-			z-index:2;
+		.animation-thingy {
 			min-height:100px;
-			//background-color:rgba(0,0,0,0.4);
-    		position:absolute;
+			z-index:2; 
+			position:absolute;
+    		width:100%;  
     		bottom:0;
-    		width:100%;
-    		//border-top:1px solid rgba(0,0,0,0.6);
+
+			.ticket-card, .ticket-scanner {
+			}
+			.bottom-part {
+				width:300px;
+				height:100px;
+				background:#333;
+				padding:25px 20px;
+				display:inline-block;
+				bottom:25px;
+				z-index:1;
+				position:absolute;
+				margin-left:-250px;
+				border-top-left-radius:5px;
+				border-top-right-radius:5px;
+			}
+			.ticket-scanner {
+				width:300px;
+				height:100px;
+				background:#555;
+				padding:25px 20px;
+				display:inline-block;
+				bottom:0px;
+				position:absolute;
+				margin-left:-250px;
+				z-index:3;
+				div.laser-1 {
+					height:1px;
+					top:-20px;
+
+				}
+				div.laser-2 {
+					height:2px;
+					top:-15px;
+				}
+				div.laser-3 {
+					height:10px;
+					top:-10px;
+
+				}
+				div.laser {
+					position:absolute;					
+					background:rgba(255,0,0,0.5);
+					left:65px;
+					right:65px;
+
+					-webkit-animation-name: pulsate;
+					-webkit-animation-duration: 1s;
+					-webkit-animation-timing-function: ease-in-out;
+					-webkit-animation-iteration-count: infinite
+				}
+				@-webkit-keyframes pulsate {
+					0% { background:rgba(255,0,0,0.4); }
+					10% { background:rgba(255,0,0,0.5); }
+					20% { background:rgba(255,0,0,0.4); }
+					30% { background:rgba(255,0,0,0.6); }
+					40% { background:rgba(255,0,0,0.6); } 
+					50% { background:rgba(255,0,0,0.4);}
+					60% { background:rgba(255,0,0,0.6);}
+					70% { background:rgba(255,0,0,0.5);}
+					80% { background:rgba(255,0,0,0.5);}
+					90% { background:rgba(255,0,0,0.4);}
+					100% { background:rgba(255,0,0,0.5);}
+				 }
+				div.shadow {
+					height:5px;
+					position:absolute;
+					top:-5px;
+					background:rgba(0,0,0,0.2);
+					left:0px;
+					right:0px;
+				}
+				div.counter {
+					position:absolute;
+					display:block;
+					width:260px;
+					background:#94b3b2;
+					height:50px;
+					border-radius:5px;
+					.title {
+						font-weight:100;
+						color:#ddd;
+						position:absolute;
+						top:-15px;
+						font-size:12px;
+						left:0px;
+					}
+					.digits {
+						color:#333;
+						position:relative;
+						display:block;
+						font-size:40px;
+						line-height:50px;
+						width:100%;
+						letter-spacing:2px;
+						font-family:"Digit", "Roboto"
+
+					}
+				}
+				span.light {
+					position:absolute;
+					top:-25px;
+					right:0px;
+					width:35px;
+					height:35px;
+					border:10px solid #555;
+					border-radius:2px;
+					background:red;
+					transition:.3s;
+				}
+			}
+			.ticket-card {
+				width:200px;
+				z-index:2;
+				box-shadow:2px 0px 3px rgba(0,0,0,0.2);
+				height:350px;
+				border-radius:3px;
+				background:#fff;
+				background-image: url(../images/barcode.gif);
+				background-repeat:no-repeat;
+				background-position:center 90%;
+				background-size:150px;
+				display:inline-block;
+				bottom:-140px;
+				@media (max-width: 1000px) {
+					bottom:-190px;
+				}
+				padding:15px;
+				text-align:left;
+				h2 {
+					color:$primary-color;
+					font-size:0.9rem;
+					line-height:1rem
+				}
+				img {
+					width:100%;
+					padding:0px 140px 10px 0px;
+
+					float:left;
+
+				}
+			}
+
             #clockdiv{
 
 	            color: #fff;
@@ -187,11 +328,11 @@ main{
 	            font-weight: 100;
 	            text-align: center;
 	            font-size:1.5rem;
-	            margin:20px 0px;
+	            margin:0px 0px;
 
 	            & > div{
 					border-radius: 3px;		
-					background: rgba(255,255,255,0.4);
+					background: rgba(255,255,255,1);
 					display: inline-block;
 
 					& > span {
@@ -221,7 +362,7 @@ main{
 
     }
     .slide.slide-2 {
-        background-color:#fafafa;
+        background-color:$primary-color;
     	padding:100px 0px;
 		z-index:5;
 
@@ -238,7 +379,7 @@ main{
 
     }
     .slide.slide-3 {
-        padding:150px 0px 500px 0px;
+        padding:80px 0px;
  
 
 		background: #fff;
@@ -256,16 +397,15 @@ main{
 			height:100%; 
    		}
    		.scene {
-			background-size:cover!important ;
+			//background-size:cover!important ;
 
-   			background: url(../images/scene.jpg);
+   			//background: url(../images/scene.jpg);
 			background-position:center 0px;
 			z-index:6;
    		}
    		.crowd {
-               			background-size:cover!important;
-
-   			background: url(../images/crowd.png);
+			//background-size:cover!important;
+   			//background: url(../images/crowd.png);
 			background-position:center 0px;
 			z-index:8;
    		}
