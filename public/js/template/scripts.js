@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $(window).on('load scroll resize', function () {
 
-        if ($(window).scrollTop() >= $(window).height()) {
+        if ($(window).scrollTop() >= ( $(window).height()) - 200  ) {
 
             $('header').addClass("menuOnTop");
 
@@ -84,6 +84,7 @@ $(document).ready(function () {
         this.remove();
 
     });
+
     $('.ticket-card').on('click', function () {
         $(this).parent().css('transition', '.3s');
         scene.progress(1);

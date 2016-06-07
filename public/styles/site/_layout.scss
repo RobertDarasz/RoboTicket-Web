@@ -5,7 +5,7 @@ body, html {
      	font-size:16px;
      	background:#fff;
 }
-
+ 
 .no-padding   {
 	 padding:0 !important; 
  }
@@ -108,18 +108,21 @@ main{
         position:relative;
     }
     @keyframes animate-screen {
-    	from {height: 100%;}
-    	to {height: 0;}
+    	from {top: 0;}
+    	to {top: 100%;}
 	}
     section.animate-in-screen {
-		position:fixed;
+		position:absolute;
 		width:100%;
 		height:100%;
-		background-color:#000;
+		background-color:$primary-color;
+		bottom:0;
+		top:0;
 		z-index:200;
 		animation:animate-screen forwards;
 		animation-duration: 0.5s;
-		animation-delay:1s;
+		animation-delay:0.5s;
+		z-index:2001;
     } 
     section.slide, footer {  
     	float:left;
@@ -181,7 +184,7 @@ main{
     }
     .slide.slide-2 {
         background-color:$primary-color;
-    	padding:120px 0px 300px 0px;
+    	padding:150px 0px 300px 0px;
 		z-index:5;
 		.animation-thingy {
 			min-height:100px;
@@ -369,23 +372,23 @@ main{
 			width:100%;
 			height:100%; 
    		}
-   		.scene {
-			//background-size:cover!important ;
-
-   			//background: url(../images/scene.jpg);
-			background-position:center 0px;
-			z-index:6;
-   		}
-   		.crowd {
-			//background-size:cover!important;
-   			//background: url(../images/crowd.png);
-			background-position:center 0px;
-			z-index:8;
-   		}
    		.container {
    			position:relative;
-   			z-index:7
+   			z-index:7;
+   			.logos {
+   				margin-right:20px;
+   				padding-right:20px;
+   				border-right: 1px solid #ddd;
+   				float:left;
+   				width:200px;
+   				img {
+   					float:left; 
+   				}
+   			}
+   			
+
    		}
+
     }
     .slide.slide-4 {
         width: 100%;
