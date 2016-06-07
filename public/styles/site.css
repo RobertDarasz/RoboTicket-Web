@@ -2245,11 +2245,21 @@ header {
       line-height: 100%;
       width: 100%;
       padding: 0px 0px; }
-      header .container nav img.logo {
+
+@keyframes animate-logo {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      header .container nav .logo {
         float: left;
         height: 35px;
         margin: 22px 0px;
-        cursor: pointer; }
+        opacity: 0;
+        cursor: pointer;
+        animation: animate-logo forwards;
+        animation-duration: 1s;
+        animation-delay: 1s; }
       header .container nav ul {
         display: block;
         float: right;
@@ -2294,6 +2304,17 @@ footer {
     footer a:hover {
       text-decoration: none;
       color: #fff; }
+  footer p.contact-info {
+    display: inline-block;
+    vertical-align: top;
+    margin: 60px 0px;
+    text-align: center;
+    padding: 0px 20px; }
+    footer p.contact-info .svg-img {
+      display: block;
+      width: 50px;
+      margin: 0 auto 50px auto;
+      height: auto; }
 
 main {
   position: relative;
@@ -2319,8 +2340,27 @@ main {
     z-index: 200;
     animation: animate-screen forwards;
     animation-duration: 0.5s;
-    animation-delay: 0.5s;
+    animation-delay: 1s;
     z-index: 2001; }
+
+@keyframes animate-logo-in {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+    main section.animate-in-screen .logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 350px;
+      opacity: 1;
+      cursor: pointer;
+      transition: .3s;
+      z-index: 2;
+      animation: animate-logo-in forwards;
+      animation-duration: 0.5s;
+      animation-delay: 0.5s; }
   main section.slide, main footer {
     float: left;
     width: 100%;
@@ -2330,8 +2370,9 @@ main {
       font-weight: 300;
       margin-bottom: 40px; }
   main .slide.slide-1 {
+    background-color: #121212;
     width: 100%;
-    min-height: calc(100vh - 200px);
+    min-height: calc(100vh - 300px);
     overflow: hidden; }
     main .slide.slide-1 video.fullscreen {
       position: fixed;
@@ -2346,8 +2387,10 @@ main {
     main .slide.slide-1 .center-height {
       z-index: 2;
       position: relative;
-      top: 35vh; }
+      top: 20vh; }
       main .slide.slide-1 .center-height h1 {
+        position: relative;
+        padding-left: 70px;
         font-weight: 100;
         font-size: 3rem;
         line-height: 4rem;
@@ -2355,6 +2398,35 @@ main {
         text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2); }
         main .slide.slide-1 .center-height h1 b {
           font-weight: normal; }
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }
+  40% {
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px); }
+  60% {
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px); } }
+        main .slide.slide-1 .center-height h1 .bouncer {
+          width: 0;
+          height: 0;
+          left: 0;
+          border-left: 15px solid transparent;
+          border-right: 15px solid transparent;
+          border-top: 20px solid #fff;
+          cursor: pointer;
+          position: absolute;
+          margin-top: 0px;
+          -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+          -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+          -webkit-animation-name: bounce;
+          animation-name: bounce;
+          -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite; }
         main .slide.slide-1 .center-height h1 img.logo {
           height: auto;
           width: 15%;
@@ -2368,54 +2440,58 @@ main {
           margin-bottom: 0px; }
   main .slide.slide-2 {
     background-color: #c31a61;
-    padding: 150px 0px 300px 0px;
-    z-index: 5; }
+    z-index: 5;
+    overflow: visible; }
     main .slide.slide-2 .animation-thingy {
       min-height: 100px;
       z-index: 2;
       position: absolute;
-      width: 100%;
-      bottom: 0; }
-      main .slide.slide-2 .animation-thingy .bottom-part {
-        width: 300px;
-        height: 100px;
-        background: #333;
-        padding: 25px 20px;
-        display: inline-block;
-        bottom: 25px;
-        z-index: 1;
+      left: 0;
+      bottom: 0;
+      top: 0; }
+      main .slide.slide-2 .animation-thingy .scanner {
         position: absolute;
-        margin-left: -250px;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px; }
-      main .slide.slide-2 .animation-thingy .ticket-scanner {
-        width: 300px;
-        height: 100px;
-        background: #555;
-        padding: 25px 20px;
-        display: inline-block;
-        bottom: 0px;
-        position: absolute;
-        margin-left: -250px;
-        z-index: 3; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.laser-1 {
-          height: 1px;
-          top: -20px; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.laser-2 {
-          height: 2px;
-          top: -15px; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.laser-3 {
-          height: 10px;
-          top: -10px; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.laser {
+        left: 0;
+        bottom: 0; }
+        main .slide.slide-2 .animation-thingy .scanner .bottom-part {
+          width: 300px;
+          height: 100px;
+          background: #333;
+          padding: 25px 20px;
+          display: block;
+          bottom: 25px;
+          z-index: 1;
+          left: 0;
           position: absolute;
-          background: rgba(255, 0, 0, 0.5);
-          left: 65px;
-          right: 65px;
-          -webkit-animation-name: pulsate;
-          -webkit-animation-duration: 1s;
-          -webkit-animation-timing-function: ease-in-out;
-          -webkit-animation-iteration-count: infinite; }
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px; }
+        main .slide.slide-2 .animation-thingy .scanner .ticket-scanner {
+          width: 300px;
+          height: 100px;
+          background: #555;
+          padding: 25px 20px;
+          display: inline-block;
+          position: absolute;
+          bottom: 0;
+          z-index: 3; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.laser-1 {
+            height: 1px;
+            top: -20px; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.laser-2 {
+            height: 2px;
+            top: -15px; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.laser-3 {
+            height: 10px;
+            top: -10px; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.laser {
+            position: absolute;
+            background: rgba(255, 0, 0, 0.5);
+            left: 65px;
+            right: 65px;
+            -webkit-animation-name: pulsate;
+            -webkit-animation-duration: 1s;
+            -webkit-animation-timing-function: ease-in-out;
+            -webkit-animation-iteration-count: infinite; }
 
 @-webkit-keyframes pulsate {
   0% {
@@ -2440,80 +2516,66 @@ main {
     background: rgba(255, 0, 0, 0.4); }
   100% {
     background: rgba(255, 0, 0, 0.5); } }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.shadow {
-          height: 5px;
-          position: absolute;
-          top: -5px;
-          background: rgba(0, 0, 0, 0.2);
-          left: 0px;
-          right: 0px; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner div.counter {
-          position: absolute;
-          display: block;
-          width: 260px;
-          background: #94b3b2;
-          height: 50px;
-          border-radius: 5px; }
-          main .slide.slide-2 .animation-thingy .ticket-scanner div.counter .title {
-            font-weight: 100;
-            color: #ddd;
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.shadow {
+            height: 5px;
             position: absolute;
-            top: -15px;
-            font-size: 12px;
-            left: 0px; }
-          main .slide.slide-2 .animation-thingy .ticket-scanner div.counter .digits {
-            color: #333;
-            position: relative;
+            top: -5px;
+            background: rgba(0, 0, 0, 0.2);
+            left: 0px;
+            right: 0px; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.counter {
+            position: absolute;
             display: block;
-            font-size: 40px;
-            line-height: 50px;
-            width: 100%;
-            letter-spacing: 2px;
-            font-family: "Digit", "Roboto"; }
-        main .slide.slide-2 .animation-thingy .ticket-scanner span.light {
-          position: absolute;
-          top: -25px;
-          right: 0px;
-          width: 35px;
-          height: 35px;
-          border: 10px solid #555;
-          border-radius: 2px;
-          background: red;
-          transition: .3s; }
+            width: 260px;
+            background: #94b3b2;
+            height: 50px;
+            border-radius: 5px; }
+            main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.counter .title {
+              font-weight: 100;
+              color: #ddd;
+              position: absolute;
+              top: -15px;
+              font-size: 12px;
+              left: 0px; }
+            main .slide.slide-2 .animation-thingy .scanner .ticket-scanner div.counter .digits {
+              color: #333;
+              position: relative;
+              display: block;
+              font-size: 40px;
+              line-height: 50px;
+              width: 100%;
+              letter-spacing: 2px;
+              font-family: "Digit", "Roboto"; }
+          main .slide.slide-2 .animation-thingy .scanner .ticket-scanner span.light {
+            position: absolute;
+            top: -25px;
+            right: 0px;
+            width: 35px;
+            height: 35px;
+            border: 10px solid #555;
+            border-radius: 2px;
+            background: red;
+            transition: .3s; }
       main .slide.slide-2 .animation-thingy .ticket-card {
-        width: 200px;
+        width: 250px;
         z-index: 2;
-        box-shadow: 2px 0px 3px rgba(0, 0, 0, 0.2);
-        height: 350px;
-        border-radius: 3px;
-        background: #fff;
-        background-image: url(../images/barcode.gif);
-        background-repeat: no-repeat;
-        background-position: center 90%;
-        background-size: 150px;
-        display: inline-block;
-        bottom: -100px;
-        padding: 15px;
-        text-align: left; }
-        @media (max-width: 1000px) {
-          main .slide.slide-2 .animation-thingy .ticket-card {
-            bottom: -190px; } }
-        main .slide.slide-2 .animation-thingy .ticket-card h2 {
-          color: #c31a61;
-          font-size: 0.9rem;
-          line-height: 1rem; }
-        main .slide.slide-2 .animation-thingy .ticket-card img {
-          width: 100%;
-          padding: 0px 140px 10px 0px;
-          float: left; }
-      main .slide.slide-2 .animation-thingy .container {
-        color: #fff;
-        font-size: 1rem; }
+        height: auto;
+        display: block;
+        bottom: 250px;
+        top: -100px;
+        left: 0px;
+        position: absolute; }
     main .slide.slide-2 .container {
+      position: relative;
       color: #fff;
-      font-size: 1rem; }
+      font-size: 1rem;
+      padding: 100px 0px 250px 0px; }
       main .slide.slide-2 .container h2 {
         color: #fff; }
+      main .slide.slide-2 .container p {
+        font-size: 1.8rem;
+        line-height: 2.5rem;
+        font-weight: 100; }
   main .slide.slide-3 {
     padding: 80px 0px;
     background: #fff;
@@ -2538,11 +2600,26 @@ main {
         width: 200px; }
         main .slide.slide-3 .container .logos img {
           float: left; }
+      main .slide.slide-3 .container .seat-animated {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0; }
+        main .slide.slide-3 .container .seat-animated img {
+          height: 100px;
+          width: auto; }
+        main .slide.slide-3 .container .seat-animated .seatMy {
+          position: absolute;
+          top: 0px; }
+        main .slide.slide-3 .container .seat-animated .seatEmpty {
+          position: absolute;
+          bottom: 0; }
   main .slide.slide-4 {
     width: 100%;
     color: #fff;
     margin-top: -1px;
-    min-height: calc(100vh - 70px);
+    height: calc(100vh - 70px);
+    min-height: 800px;
     overflow: hidden;
     z-index: 8;
     padding: 100px 0px;
@@ -2573,7 +2650,6 @@ main {
   .menuTrigger, .menuTriggerLabel {
     display: none; }
   header.menuOnTop {
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
     background: #fff;
     position: fixed;
     top: 0;
@@ -2699,17 +2775,6 @@ main {
             float: none;
             display: block;
             padding-bottom: 0; }
-      main .slide.slide-1 .counter #clockdiv {
-        font-size: 1.1rem;
-        margin: 20px 0px;
-        line-height: 2rem; }
-        main .slide.slide-1 .counter #clockdiv > div > span {
-          padding: 5px;
-          font-weight: normal; }
-        main .slide.slide-1 .counter #clockdiv .smalltext {
-          padding: 0px 10px;
-          font-size: 0.8rem;
-          line-height: 1.5rem; }
     main .slide.slide-3 {
       padding: 100px 0px; }
       main .slide.slide-3 .container {

@@ -33,11 +33,11 @@
 
     <main>
         <section class="slide slide-1">
-            <section class="animate-in-screen animate slideOutDown" data-wow-duration="1s"></section>
+            <!--<section class="animate-in-screen animate slideOutDown" data-wow-duration="1s" ><img class="logo" src="images/oldlogowhite.svg" /></section>-->
 
-            <div class="center-height container left-center">
+            <div class="center-height container left-center" data-stellar-ratio="0.5">
 
-                <h1 class="animate bounceInUp" data-wow-delay="1.6s"><img class="logo" src="images/signature.svg" />Innovative<b> ticketing system</b><br /> for sport market.</h1>
+                <h1 class="animate bounceInUp" data-wow-delay="1.6s"><!--<img class="logo" src="images/signature.svg" />-->Let us introduce you to a whole new world when it comes to <b>ticketing systems</b> for sport events.<span class="bouncer"></span></h1>
 
             </div>
 
@@ -52,71 +52,78 @@
         </section>
 
         <section class="slide slide-2">
-            <div class="text-center animation-thingy animate bounceInUp" data-wow-delay="2.5s">
-                <div class="container ">
-                    <div class='ticket-card'>
-                        <h2><img class="logo" src="images/signature.svg" />Innovative <b>ticketing</b><br /> and <b>mass events management system.</b></h2>
-                    </div>
-                    <div class="bottom-part"></div>
-                    <div class="ticket-scanner">
-                        <div class="top-part">
-                            <div class="laser laser-1">
-
-                            </div>
-                            <div class="laser-2 laser">
-
-                            </div>
-                            <div class="laser-3 laser">
-
-                            </div>
-                            <div class="shadow"></div>
-                            <div class="counter">
-                                <span class="title">
-                                    tickets sold
-                                </span>
-                                <div class="digits">
-                                    123444556
+            <div class="container">
+                <div class="row">
+                    <div class="text-center animation-thingy col-md-4 ">
+                        <img src="images/ticket.png" class='ticket-card animate fadeIn' data-wow-delay="2s" data-wow-duration="0.3s" />
+                        <!--<div class="scanner">
+                            <div class="bottom-part"></div>
+                            <div class="ticket-scanner">
+                                <div class="top-part">
+                                    <div class="laser laser-1"></div>
+                                    <div class="laser-2 laser"></div>
+                                    <div class="laser-3 laser"></div>
+                                    <div class="shadow"></div>
+                                    <div class="counter">
+                                        <span class="title">
+                                            tickets sold
+                                        </span>
+                                        <div class="digits">
+                                        </div>
+                                    </div>
+                                    <span class="light"></span>
                                 </div>
                             </div>
-                            <span class="light"></span>
-                        </div>
+                        </div>-->
+                      
+                    </div>
+
+                    <div class="animate bounceInDown col-md-8 col-md-offset-4 " data-wow-offset="120">
+                        <p>
+                            Roboticket is a ticketing system for sports clubs and venues made with full understanding of club’s needs.  We are a software company, delivering ticketing and access control since 2009.
+                        </p>
+                        <p>Roboticket is exclusive representative of FortressGB in Poland.</p>
                     </div>
                 </div>
-
-            </div>
-            <div class="container animate bounceInDown" data-wow-offset="120">
-                <h2>Who we are</h2>
-                <p>
-                    Roboticket is a complex ticketing system for sports clubs and venues made with full understanding of club’s needs.  We are a software company, delivering ticketing and access control since 2009.
-                </p>
-                <p>Roboticket is exclusive representative of FortressGB in Poland.</p>
             </div>
         </section>
         <section id="#slide3" class="slide slide-3" data-stellar-offset-parent="true" data-stellar-vertical-offset="70">
             <div class="container animate bounceInDown" data-wow-duration="1s">
-                <h2>The difference</h2>
-                <p>We are flexible and we can adapt to your specific needs, we understand that ticketing is one of the main branch of sport clubs activities. Implementing new ideas is making us better and better every day, our knowledge we share with our clients.</p>
                 <div class="row">
-                    <div class="col-md-12" style="margin-bottom:30px;margin-top:30px;">
-                        <span class="logos">
-                            <img src="images/aws.png" width="100" />
-                        </span>
-
-                            <p>We are hosted on Amazon Web Services with dedicated plans depending of club size and fans range. </p>
-
+                    <div class="col-md-8">
+                        <h2>The difference</h2>
+                        <p>We are flexible and we can adapt to your specific needs, we understand that ticketing is one of the main branch of sport clubs activities. Implementing new ideas is making us better and better every day, our knowledge we share with our clients.</p>
+                       
                     </div>
-                    <div class="col-md-12">
-                        <span class="logos">
-                            <img src="images/mailchimp.png" width="50" />
-                            <img src="images/intercom.gif" width="100" />
-                        </span>
+                    <div class="col-md-4 seat-animateda">
+                        <!--<img src="images/seatEmpty.svg" class="seatEmpty" />
+                        <img src="images/seatMy.svg"  class="seatMy" />-->
 
-                        <p>
-                            Our software is open for any third party integration that will help develop a better solution for our clients. Today’s integration already helps our client to improve communication with fans.
+                        <div class="row">
+                            <div class="col-md-12" style="margin-bottom:30px;margin-top:30px;">
+                                <span class="logos">
+                                    <img src="images/aws.png" width="100" />
+                                </span>
 
-                        </p>
+                                <p>We are hosted on Amazon Web Services with dedicated plans depending of club size and fans range. </p>
+
+                            </div>
+                            <div class="col-md-12">
+                                <span class="logos">
+                                    <img src="images/mailchimp.png" width="50" />
+                                    <img src="images/intercom.gif" width="100" />
+                                </span>
+
+                                <p>
+                                    Our software is open for any third party integration that will help develop a better solution for our clients. Today’s integration already helps our client to improve communication with fans.
+
+                                </p>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+               
 
 
             </div>
@@ -148,17 +155,19 @@
         <footer>
             <div class="container animate bounceInUp">
                 <h2>Contact details</h2>
-                <p>
-                    Please contact us if u are interested to get and offer <a href="mailto:bid@roboticket.com">bid@roboticket.com</a>
-                    In case of any technical issues please use <a href="mailto:help@roboticket.com">help@roboticket.com</a>
-                </p>
-                <p>
-                    Roboticket Sp. z o.o. is registered in Poznań, Poland under registration KRS no. 000589112
-                </p>
-                <img src="images/icons/phone-call.svg" />
-                <img src="images/icons/letter.svg" />
+                <div class="row">
+                    <p class="contact-info col-md-4 col-xs-12">
+                        <img src="images/icons/phone-call.svg" class="svg-img" />Make a call if you want to know more about our product <br/><b>+48 696 50 60 65</b>
+                    </p>
+                    <p class="contact-info col-md-4 col-xs-12">
+                        <img src="images/icons/letter.svg" class="svg-img" /> Please contact us if u are interested to get and offer <a href="mailto:bid@roboticket.com">bid@roboticket.com</a>
+                        In case of any technical issues please use <a href="mailto:help@roboticket.com">help@roboticket.com</a>
+                    </p>
+                    <p class="contact-info col-md-4 col-xs-12">
+                        <img src="images/icons/compass.svg" class="svg-img" />Roboticket Sp. z o.o. is registered in Poznań, Poland under registration KRS no. 000589112, Górecka 30, Poznań 60-201
+                    </p>
 
-                <img src="images/icons/compass.svg" />
+                </div>
 
             </div>
 

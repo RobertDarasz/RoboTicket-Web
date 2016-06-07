@@ -62,34 +62,46 @@ $(document).ready(function () {
 
 
     // init controller
-    var controller = new ScrollMagic.Controller({ addIndicators: true });
+    var controller = new ScrollMagic.Controller();
 
     //// create a scene
-    var scene = new ScrollMagic.Scene({
-        duration: 350,    // the scene should last for a scroll distance of 100px
-        offset: 50        // start this scene after scrolling for 50px
+    var ticket = new ScrollMagic.Scene({
+        duration: 200,    // the scene should last for a scroll distance of 100px
+        triggerElement: ".ticket-card",
+        offset: 100
     })
-        .setPin(".ticket-card", { pushFollowers: true }) // pins the element for the the scene's duration
+        .setPin(".ticket-card", { pushFollowers: false }) // pins the element for the the scene's duration
+        .addIndicators()
         .addTo(controller); // assign the scene to the controller
-    scene.on("start", function (event) {
+
+    ticket.on("start", function (event) {
         $('.ticket-scanner span.light').css('background', 'red');
     });
 
-    scene.on("end", function (event) {
+    ticket.on("end", function (event) {
         var count = $('.animation-thingy .digits').html();
         $('.ticket-scanner span.light').css('background', 'green');
         var int = parseInt(count);
         console.log(int);
         $('.animation-thingy .digits').html(int + 1);
-        this.remove();
+       // this.remove();
 
     });
 
-    $('.ticket-card').on('click', function () {
-        $(this).parent().css('transition', '.3s');
-        scene.progress(1);
-        scene.remove();
+    var seat = new ScrollMagic.Scene({
+        duration: 260,    // the scene should last for a scroll distance of 100px
+        triggerElement: ".seat-animated",
+        
     })
+      .setPin(".seatMy", { pushFollowers: false }) // pins the element for the the scene's duration
+      .addIndicators()
+      .addTo(controller); // assign the scene to the controller
+
+    //$('.ticket-card').on('click', function () {
+    //    $(this).parent().css('transition', '.3s');
+    //    ticket.progress(1);
+    //    ticket.remove();
+    //})
  
     //$("header ul li").each(function () {
     //    $(this).width($(this).children().innerWidth());
