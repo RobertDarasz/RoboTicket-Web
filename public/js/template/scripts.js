@@ -78,41 +78,88 @@ $(document).ready(function () {
         $('.ticket-scanner span.light').css('background', 'red');
     });
 
-    ticket.on("end", function (event) {
-        var count = $('.animation-thingy .digits').html();
-        $('.ticket-scanner span.light').css('background', 'green');
-        var int = parseInt(count);
-        console.log(int);
-        $('.animation-thingy .digits').html(int + 1);
+    //ticket.on("end", function (event) {
+        //var count = $('.animation-thingy .digits').html();
+        //$('.ticket-scanner span.light').css('background', 'green');
+        //var int = parseInt(count);
+        //console.log(int);
+        //$('.animation-thingy .digits').html(int + 1);
        // this.remove();
 
+    //});
+
+    //var seat = new ScrollMagic.Scene({
+    //    duration: 260,    // the scene should last for a scroll distance of 100px
+    //    triggerElement: ".seat-animated",
+        
+    //})
+    //  .setPin(".seatMy", { pushFollowers: false }) // pins the element for the the scene's duration
+    //  .addIndicators()
+    //  .addTo(controller); // assign the scene to the controller
+
+    //var clientsbox = new ScrollMagic.Scene({ triggerElement: ".panel.FCKDK", duration: 300, offset:-200})
+	//							.setPin(".pin-logos")
+	//							.addIndicators({ name: "2 (duration: 0)" }) // add indicators (requires plugin)
+	//							.addTo(controller);
+
+    var clients = new TimelineMax()
+			//.fromTo(".panel.FCMDK", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })  // in from right
+			//.fromTo(".panel.Lech", 1, { y: "-100%" }, { y: "0%", ease: Linear.easeNone }) // in from top
+            //.fromTo(".panel.Lechia", 1, { x: "-100%" }, { x: "0%", ease: Linear.easeNone })  // in from left
+			//.fromTo(".panel.UL", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })  // in from right
+			//.fromTo(".panel.Sparta", 1, { y: "-100%" }, { y: "0%", ease: Linear.easeNone }); // in from top
+
+            .to(".slide-container", 0.5, {z: -100, delay: 1.5})		// move back in 3D space
+			.to(".slide-container", 1,   {x: "-16.666%"})	// move in to first panel
+			.to(".slide-container", 0.5, {z: 0})				// move back to origin in 3D space
+			// animate to second panel
+			.to(".slide-container", 0.5, { z: -100, delay: 1.5 })
+			.to(".slide-container", 1, { x: "-33.33%" })
+			.to(".slide-container", 0.5, {z: 0})
+			// animate to third panel
+			.to(".slide-container", 0.5, { z: -100, delay: 1.5 })
+			.to(".slide-container", 1,   {x: "-49.999%"})
+			.to(".slide-container", 0.5, {z: 0})
+        // animate to fifth panel
+            .to(".slide-container", 0.5, { z: -100, delay: 1.5 })		// move back in 3D space
+            .to(".slide-container", 1,   {x: "-66.666%"})	// move in to first panel
+            .to(".slide-container", 0.5, {z: 0})				// move back to origin in 3D space
+            // animate to sixth panel
+            .to(".slide-container", 0.5, { z: -100, delay: 1.5 })
+            .to(".slide-container", 1,   {x: "-83.333%"})
+            .to(".slide-container", 0.5, {z: 0})
+            .to(".slide-container", 0.5, { delay: 1.5 })
+
+   
+
+    // create scene to pin and link animation
+    var clientScene = new ScrollMagic.Scene({
+        triggerElement: ".pin",
+        triggerHook: "onLeave",
+        duration: "500%",
+        offset:-70,
+    })
+        .setPin(".pin")
+        .setTween(clients)
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+
+   
+    $(document).on("click", ".pin-logos a", function (e) {
+        var id = $(this).attr("href");
+        if ($(id).length > 0) {
+            e.preventDefault();
+
+            var elemTop = $(id).offset().top;
+
+            console.log(elemTop);
+            $('body, html').animate({ scrollTop: elemTop },1000);
+          
+
+           
+        }
     });
 
-    var seat = new ScrollMagic.Scene({
-        duration: 260,    // the scene should last for a scroll distance of 100px
-        triggerElement: ".seat-animated",
-        
-    })
-      .setPin(".seatMy", { pushFollowers: false }) // pins the element for the the scene's duration
-      .addIndicators()
-      .addTo(controller); // assign the scene to the controller
 
-    //$('.ticket-card').on('click', function () {
-    //    $(this).parent().css('transition', '.3s');
-    //    ticket.progress(1);
-    //    ticket.remove();
-    //})
- 
-    //$("header ul li").each(function () {
-    //    $(this).width($(this).children().innerWidth());
-    //});
-    //$("header ul li a").mouseenter(function () {
-    //    $(this).width($(this).parent().innerWidth());
-    //    $(this).addClass("active");
-    //});
-    //$("header ul li a").mouseleave(function () {
-    //    $(this).removeClass("active");
-    //    $(this).addClass("no-padding");
-    //});
-            
 });
