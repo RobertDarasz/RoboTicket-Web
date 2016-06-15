@@ -3,7 +3,7 @@ $(document).ready(function () {
 
     $(window).on('load scroll resize', function () {
 
-        if ($(window).scrollTop() >= ( $(window).height()) - 200  ) {
+        if ($(window).scrollTop() >= ( $(window).height()) - 300  ) {
 
             $('header').addClass("menuOnTop");
 
@@ -62,7 +62,9 @@ $(document).ready(function () {
 
 
     // init controller
-    var controller = new ScrollMagic.Controller();
+    var controller = new ScrollMagic.Controller({
+
+    });
 
     //// create a scene
     var ticket = new ScrollMagic.Scene({
@@ -78,88 +80,127 @@ $(document).ready(function () {
         $('.ticket-scanner span.light').css('background', 'red');
     });
 
-    //ticket.on("end", function (event) {
-        //var count = $('.animation-thingy .digits').html();
-        //$('.ticket-scanner span.light').css('background', 'green');
-        //var int = parseInt(count);
-        //console.log(int);
-        //$('.animation-thingy .digits').html(int + 1);
-       // this.remove();
 
-    //});
 
-    //var seat = new ScrollMagic.Scene({
-    //    duration: 260,    // the scene should last for a scroll distance of 100px
-    //    triggerElement: ".seat-animated",
-        
-    //})
-    //  .setPin(".seatMy", { pushFollowers: false }) // pins the element for the the scene's duration
-    //  .addIndicators()
-    //  .addTo(controller); // assign the scene to the controller
 
-    //var clientsbox = new ScrollMagic.Scene({ triggerElement: ".panel.FCKDK", duration: 300, offset:-200})
-	//							.setPin(".pin-logos")
-	//							.addIndicators({ name: "2 (duration: 0)" }) // add indicators (requires plugin)
-	//							.addTo(controller);
 
-    var clients = new TimelineMax()
-			//.fromTo(".panel.FCMDK", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })  // in from right
-			//.fromTo(".panel.Lech", 1, { y: "-100%" }, { y: "0%", ease: Linear.easeNone }) // in from top
-            //.fromTo(".panel.Lechia", 1, { x: "-100%" }, { x: "0%", ease: Linear.easeNone })  // in from left
-			//.fromTo(".panel.UL", 1, { x: "100%" }, { x: "0%", ease: Linear.easeNone })  // in from right
-			//.fromTo(".panel.Sparta", 1, { y: "-100%" }, { y: "0%", ease: Linear.easeNone }); // in from top
-
-            .to(".slide-container", 0.5, {z: -100, delay: 1.5})		// move back in 3D space
-			.to(".slide-container", 1,   {x: "-16.666%"})	// move in to first panel
-			.to(".slide-container", 0.5, {z: 0})				// move back to origin in 3D space
-			// animate to second panel
-			.to(".slide-container", 0.5, { z: -100, delay: 1.5 })
-			.to(".slide-container", 1, { x: "-33.33%" })
-			.to(".slide-container", 0.5, {z: 0})
-			// animate to third panel
-			.to(".slide-container", 0.5, { z: -100, delay: 1.5 })
-			.to(".slide-container", 1,   {x: "-49.999%"})
-			.to(".slide-container", 0.5, {z: 0})
-        // animate to fifth panel
-            .to(".slide-container", 0.5, { z: -100, delay: 1.5 })		// move back in 3D space
-            .to(".slide-container", 1,   {x: "-66.666%"})	// move in to first panel
-            .to(".slide-container", 0.5, {z: 0})				// move back to origin in 3D space
-            // animate to sixth panel
-            .to(".slide-container", 0.5, { z: -100, delay: 1.5 })
-            .to(".slide-container", 1,   {x: "-83.333%"})
-            .to(".slide-container", 0.5, {z: 0})
-            .to(".slide-container", 0.5, { delay: 1.5 })
-
-   
-
-    // create scene to pin and link animation
-    var clientScene = new ScrollMagic.Scene({
-        triggerElement: ".pin",
+    var slide2 = new ScrollMagic.Scene({
+        triggerElement: ".slide-2",
         triggerHook: "onLeave",
-        duration: "500%",
-        offset:-70,
+        duration:570
+
     })
-        .setPin(".pin")
-        .setTween(clients)
-        .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+		.setPin(".slide-2 .container")
+		.addIndicators({ name: "1 (duration: 300)" }) // add indicators (requires plugin)
+        .on("leave", function () {
+                
+        })
+		.addTo(controller);
 
 
-   
-    $(document).on("click", ".pin-logos a", function (e) {
-        var id = $(this).attr("href");
-        if ($(id).length > 0) {
-            e.preventDefault();
-
-            var elemTop = $(id).offset().top;
-
-            console.log(elemTop);
-            $('body, html').animate({ scrollTop: elemTop },1000);
-          
-
-           
-        }
-    });
 
 
+    var section1Tween = new TimelineMax()
+                        .fromTo("#section-1 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
+                        .fromTo("#section-1 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
+                        .to("#section-1 .container", 1, { y: "-100%", ease: Linear.easeNone });
+
+    var section1 = new ScrollMagic.Scene({
+        triggerElement: "#section-1",
+        triggerHook: "onLeave",
+        offset:-70,
+        duration: "200%"
+
+    })
+    .setPin("#section-1 .pin-container")
+    .setTween(section1Tween)
+    .setClassToggle(".leader a:nth-child(1)", "active")
+    .addIndicators({ name: "section slide-1" }) // add indicators (requires plugin)
+    .addTo(controller);
+
+
+    var section2Tween = new TimelineMax()
+                       .fromTo("#section-2 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
+                        .fromTo("#section-2 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
+                        .to("#section-2 .container", 1, { y: "-100%", ease: Linear.easeNone });
+
+    var section2 = new ScrollMagic.Scene({
+        triggerElement: "#section-2",
+        triggerHook: "onLeave",
+        offset: -70,
+        duration: "200%"
+
+    })
+   .setPin("#section-2 .pin-container")
+    .setTween(section2Tween)
+        .setClassToggle(".leader a:nth-child(2)", "active")
+   .addIndicators({ name: "section slide-2" }) // add indicators (requires plugin)
+   .addTo(controller);
+
+    var section3Tween = new TimelineMax()
+                   .fromTo("#section-3 .container", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
+                    .to("#section-3 .container", 1, { y: "-100%", ease: Linear.easeNone });
+
+    var section3 = new ScrollMagic.Scene({
+        triggerElement: "#section-3",
+        triggerHook: "onLeave",
+        offset: -70,
+        duration: "200%"
+
+    })
+  .setPin("#section-3 .pin-container")
+    .setTween(section3Tween)
+    .setClassToggle(".leader a:nth-child(3)", "active")
+  .addIndicators({ name: "section slide-3" }) // add indicators (requires plugin)
+  .addTo(controller);
+
+
+
+    // Menu Pins
+    var menuDot = new ScrollMagic.Scene({
+        triggerElement: ".slide-3",
+        triggerHook: "onLeave",
+        offset: 0,
+        duration: "600%"
+
+    })
+
+   .setPin(".slide-3 .leader .before")
+   .addIndicators({ name: "Dot" }) // add indicators (requires plugin)
+   .addTo(controller);
+
+   var menu = new ScrollMagic.Scene({
+        triggerElement: ".slide-3",
+        triggerHook: "onLeave",
+        offset: 0,
+        duration: "600%"
+
+    })
+   .setPin(".slide-3 .leader ul")
+   .addIndicators({ name: "Menu" }) // add indicators (requires plugin)
+   .addTo(controller);
+
+
+   controller.scrollTo(function (newpos) {
+       TweenMax.to(window, 0.5, { scrollTo: { y: newpos } });
+   });
+
+   $(document).on("click", "a[href^='#']", function (e) {
+       var id = $(this).attr("href");
+       if ($(id).length > 0) {
+           e.preventDefault();
+
+           // trigger scroll
+           controller.scrollTo(id);
+
+           // if supported by the browser we can even update the URL.
+           if (window.history && window.history.pushState) {
+               history.pushState("", document.title, id);
+           }
+       }
+   });
+
+
+    $('#slides').superslides()
+    //$('main').fullpage();
 });

@@ -1,0 +1,147 @@
+﻿#slides {
+  position: relative;
+  	height: calc(100vh - 70px)!important;
+    min-height: 700px!important;
+    color:#fff;
+}
+#slides .slides-container {
+  display: none;
+  
+  li {
+      &>img {
+          opacity:0.8;
+      }
+      p {
+          font-size:1.5rem;
+          line-height:2.2rem;
+          font-weight:300;
+      }
+      .container {
+          	display: flex;
+	        justify-content: center;
+	        align-content: center;
+            height:calc(100% - 200px);
+	        flex-direction: column;
+      }
+      span.divide {
+         	border-bottom: 5px solid #fff;
+	        width: 10%;
+            min-width:150px;
+	        display: inline-block;
+
+      }
+      padding:100px 0px;
+      span img {
+          position:relative;
+          float:left;
+          max-width:200px;
+          display:block;
+          max-height:200px;
+          width:100%;
+          margin-right:20px;
+          padding-right:20px;
+
+      }
+  }
+}
+#slides .scrollable {
+  *zoom: 1;
+  position: relative;
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  height: 100%;
+}
+#slides .scrollable:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.slides-navigation {
+  margin: 0 auto;
+  position: absolute;
+  z-index: 3;
+  top: 46%;
+  width: 100%;
+}
+.slides-navigation a {
+  position: absolute;
+  display: block;
+}
+.slides-navigation a.prev {
+  left: 0;
+}
+.slides-navigation a.next {
+  right: 0;
+}
+
+.slides-pagination {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  background:#fff;
+  padding:20px 0px;
+}
+.slides-pagination a {
+  max-height:100px;
+  max-width:200px;
+  margin:10px;
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+  overflow: hidden;
+  text-indent: -100%;
+  transition:.3s;
+  
+    img {
+        display: block;
+	    max-height: 90px;
+	    max-width: 90px;
+	    width: 100%;
+	    vertical-align: top;
+        -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+        filter: grayscale(100%);
+        opacity:0.5;
+    }
+
+     &.current {
+        transform:scale(1.2);
+
+        img {
+            -webkit-filter: grayscale(0%); /* Chrome, Safari, Opera */
+            filter: grayscale(0%);
+            opacity:1;
+
+        }
+     
+    }
+}
+
+
+@media (max-width: 1000px), (max-height: 700px) {
+
+.slides-pagination a {
+  max-height:60px;
+  max-width:100px;
+ 
+  
+    img {
+     
+      
+	    max-height: 60px;
+	    max-width: 60px;
+	   
+        
+    }
+
+
+}
+
+}
