@@ -101,20 +101,19 @@ $(document).ready(function () {
 
 
     var section1Tween = new TimelineMax()
-                        .fromTo("#section-1 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
-                        .fromTo("#section-1 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
-                        .to("#section-1 .container", 1, { y: "-100%", ease: Linear.easeNone });
+
+                        .to("#section-1 .container", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay:3});
 
     var section1 = new ScrollMagic.Scene({
         triggerElement: "#section-1",
         triggerHook: "onLeave",
-        offset:-70,
+        offset:0,
         duration: "200%"
 
     })
     .setPin("#section-1 .pin-container")
     .setTween(section1Tween)
-    .setClassToggle(".leader a:nth-child(1)", "active")
+    .setClassToggle("#goto-1", "active")
     .addIndicators({ name: "section slide-1" }) // add indicators (requires plugin)
     .addTo(controller);
 
@@ -122,35 +121,38 @@ $(document).ready(function () {
     var section2Tween = new TimelineMax()
                        .fromTo("#section-2 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
                         .fromTo("#section-2 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
-                        .to("#section-2 .container", 1, { y: "-100%", ease: Linear.easeNone });
+                        .fromTo("#section-2 .features-list", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone, delay: -1})
+                        .to("#section-2 .container", 1, { y: "-100%", ease: Linear.easeNone, delay: 2 });
 
     var section2 = new ScrollMagic.Scene({
         triggerElement: "#section-2",
         triggerHook: "onLeave",
-        offset: -70,
+        offset: 0,
         duration: "200%"
 
     })
    .setPin("#section-2 .pin-container")
     .setTween(section2Tween)
-        .setClassToggle(".leader a:nth-child(2)", "active")
+        .setClassToggle("#goto-2", "active")
    .addIndicators({ name: "section slide-2" }) // add indicators (requires plugin)
    .addTo(controller);
 
     var section3Tween = new TimelineMax()
-                   .fromTo("#section-3 .container", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
-                    .to("#section-3 .container", 1, { y: "-100%", ease: Linear.easeNone });
+                    .fromTo("#section-3 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
+                    .fromTo("#section-3 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
+                    .fromTo("#section-3 .row", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone, delay: -1 })
+                    .to("#section-3 .container", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay: 2 });
 
     var section3 = new ScrollMagic.Scene({
         triggerElement: "#section-3",
         triggerHook: "onLeave",
-        offset: -70,
+        offset: 0,
         duration: "200%"
 
     })
   .setPin("#section-3 .pin-container")
     .setTween(section3Tween)
-    .setClassToggle(".leader a:nth-child(3)", "active")
+    .setClassToggle("#goto-3", "active")
   .addIndicators({ name: "section slide-3" }) // add indicators (requires plugin)
   .addTo(controller);
 
@@ -182,7 +184,7 @@ $(document).ready(function () {
 
 
    controller.scrollTo(function (newpos) {
-       TweenMax.to(window, 0.5, { scrollTo: { y: newpos } });
+       TweenMax.to(window, 0.5, { scrollTo: { y: newpos + 1000} });
    });
 
    $(document).on("click", "a[href^='#']", function (e) {

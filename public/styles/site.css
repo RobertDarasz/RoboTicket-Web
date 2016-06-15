@@ -2577,7 +2577,8 @@ main {
         font-weight: 100; }
   main .slide.slide-3 {
     background: #fff;
-    z-index: 6; }
+    z-index: 6;
+    padding-bottom: 60vh !important; }
     main .slide.slide-3 .leader {
       position: absolute;
       top: 200px;
@@ -2596,6 +2597,9 @@ main {
           padding: 10px 10px;
           margin: 10px 0px;
           text-align: center; }
+          main .slide.slide-3 .leader ul li a.active {
+            background: #c31a61;
+            color: #fff; }
       main .slide.slide-3 .leader .before, main .slide.slide-3 .leader .after {
         width: 10px;
         height: 10px;
@@ -2617,6 +2621,36 @@ main {
       main .slide.slide-3 .panel h2 {
         font-size: 3rem;
         color: #c31a61; }
+      main .slide.slide-3 .panel .features-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-flow: row wrap;
+        justify-content: space-between; }
+        main .slide.slide-3 .panel .features-list .item {
+          padding: 5px;
+          width: 300px;
+          margin-top: 10px;
+          margin-top: 10px;
+          text-align: center;
+          margin-bottom: 20px; }
+          main .slide.slide-3 .panel .features-list .item .box {
+            display: flex;
+            -ms-flex-align: center;
+            -webkit-align-items: center;
+            -webkit-box-align: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            padding: 20px;
+            height: 300px;
+            width: 100%; }
+    main .slide.slide-3 #section-2 .panel {
+      height: auto; }
     main .slide.slide-3 .logos {
       margin-right: 20px;
       padding-right: 20px;
