@@ -106,7 +106,7 @@ $(document).ready(function () {
 
     var section1 = new ScrollMagic.Scene({
         triggerElement: "#section-1",
-        triggerHook: "onLeave",
+        triggerHook: 0.1,
         offset:0,
         duration: "200%"
 
@@ -119,33 +119,33 @@ $(document).ready(function () {
 
 
     var section2Tween = new TimelineMax()
-                       .fromTo("#section-2 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
+                        .fromTo("#section-2 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
                         .fromTo("#section-2 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
-                        .fromTo("#section-2 .features-list", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone, delay: -1})
+                        .fromTo("#section-2 .features-list", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone})
                         .to("#section-2 .container", 1, { y: "-100%", ease: Linear.easeNone, delay: 2 });
 
     var section2 = new ScrollMagic.Scene({
         triggerElement: "#section-2",
-        triggerHook: "onLeave",
+        triggerHook: 0.1,
         offset: 0,
         duration: "200%"
 
     })
-   .setPin("#section-2 .pin-container")
+    .setPin("#section-2 .pin-container")
     .setTween(section2Tween)
-        .setClassToggle("#goto-2", "active")
-   .addIndicators({ name: "section slide-2" }) // add indicators (requires plugin)
-   .addTo(controller);
+    .setClassToggle("#goto-2", "active")
+    .addIndicators({ name: "section slide-2" }) // add indicators (requires plugin)
+    .addTo(controller);
 
     var section3Tween = new TimelineMax()
                     .fromTo("#section-3 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
                     .fromTo("#section-3 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
-                    .fromTo("#section-3 .row", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone, delay: -1 })
+                    .fromTo("#section-3 .row", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone })
                     .to("#section-3 .container", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay: 2 });
 
     var section3 = new ScrollMagic.Scene({
         triggerElement: "#section-3",
-        triggerHook: "onLeave",
+        triggerHook: 0.1,
         offset: 0,
         duration: "200%"
 
@@ -161,7 +161,7 @@ $(document).ready(function () {
     // Menu Pins
     var menuDot = new ScrollMagic.Scene({
         triggerElement: ".slide-3",
-        triggerHook: "onLeave",
+        triggerHook: 0.1,
         offset: 0,
         duration: "600%"
 
@@ -173,7 +173,7 @@ $(document).ready(function () {
 
    var menu = new ScrollMagic.Scene({
         triggerElement: ".slide-3",
-        triggerHook: "onLeave",
+        triggerHook: 0.1,
         offset: 0,
         duration: "600%"
 
