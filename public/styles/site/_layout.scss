@@ -434,18 +434,22 @@ main{
     	//background-size:cover;
    		z-index:6;
    		padding-bottom: 60vh!important;
+   		.container {
+   			position:relative;
+   		}
    		.leader {
 			position:absolute;
 			top:200px;
 			bottom:200px;
 			width:1px;
 			background-color:$primary-color;
-			left: 100px;
+			left: 0;
 			z-index:20;
 
 			ul {
 				list-style:none;
-				min-width:200px;
+				min-width:150px;
+				padding-left:15px;
 				li {
 					a {
 						color:$primary-color;
@@ -454,6 +458,7 @@ main{
 						padding:10px 10px;
 						margin:10px 0px;
 						text-align:center;
+						font-size:0.9rem;
 
 						&.active {
 							background:$primary-color;
@@ -481,7 +486,7 @@ main{
 			}
    		}
 			section {
-				//padding-left:350px!important;
+				padding-left:200px!important;
 			}
 			
 			.panel {
