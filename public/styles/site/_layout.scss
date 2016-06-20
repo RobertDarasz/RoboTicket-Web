@@ -433,9 +433,10 @@ main{
     	//background-attachment:fixed;
     	//background-size:cover;
    		z-index:6;
-   		padding-bottom: 60vh!important;
+   		
    		.container {
    			position:relative;
+   			padding-bottom: 60vh!important;
    		}
    		.leader {
 			position:absolute;
@@ -542,8 +543,10 @@ main{
 			}
 		   			
 			#section-2 {
+					height:auto;
 				.panel {
-					height:auto
+					height:auto;
+				
 				}
 			}
    			.logos {
