@@ -141,7 +141,6 @@ $(document).ready(function () {
                     .fromTo("#section-3 h2", 1, { x: "100%", autoAlpha: 0 }, { x: "0%", autoAlpha: 1, ease: Linear.easeNone })
                     .fromTo("#section-3 p", 1, { autoAlpha: 0 }, { autoAlpha: 1, ease: Linear.easeNone })
                     .fromTo("#section-3 .row", 1, { autoAlpha: 0, y: "20%" }, { autoAlpha: 1, y: "0%", ease: Linear.easeNone })
-                    .to("#section-3 .panel", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay: 2 });
 
     var section3 = new ScrollMagic.Scene({
         triggerElement: "#section-3",
