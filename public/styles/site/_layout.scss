@@ -99,6 +99,7 @@ footer {
 	position:relative;
 	padding:100px 0px;
 	font-size:0.8rem;
+	min-height:200px;
 	h2{
 		font-weight:300;
 	}
@@ -137,8 +138,9 @@ main{
     min-height:100vh;
     overflow-x:hidden;
 	
-    section {
+    & > section {
         position:relative;
+        padding:0px 15px;
     }
     @keyframes animate-screen {
     	from {top: 0;}
@@ -487,7 +489,7 @@ main{
 			}
    		}
 			section {
-				padding-left:200px!important;
+				padding-left:200px;
 			}
 			
 			.panel {
@@ -587,7 +589,7 @@ main{
 		min-height:700px!important;
        	//background:rgba(195, 26, 97, 0.72);
        	z-index:8;
-		 
+		padding:0px!important;
 		.stateController {
 			height:calc(100vh - 70px);
 			width:100%;
@@ -886,13 +888,26 @@ main{
 
 			
 		}
-
+		.slide.slide-2 {
+			.animation-thingy {
+				display:none;
+			}
+		}
 		 .slide.slide-3 {
        		padding:100px 0px;
+       		.leader {
+       			display:none;
+       		}
+       		.panel {
+       			padding:0px;
+       		}
+       		section {
+       			padding-left:0px;
+       		}
 			.container {
 				background:rgba(255,255,255,0.8);
-				padding:20px;
-				margin:20px;
+				//padding:20px; 
+				//margin:20px;
 				z-index:9
 			}
     }
