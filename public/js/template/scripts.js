@@ -87,7 +87,7 @@ $(document).ready(function () {
     var slide2 = new ScrollMagic.Scene({
         triggerElement: ".slide-2",
         triggerHook: "onLeave",
-        duration:570
+        duration:500
 
     })
 		.setPin(".slide-2 .container")
@@ -102,7 +102,7 @@ $(document).ready(function () {
 
     var section1Tween = new TimelineMax()
 
-                        .to("#section-1 .container", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay:3});
+                        .to("#section-1 .panel", 1, { y: "-100%", autoAlpha: 0, ease: Linear.easeNone, delay:3});
 
     var section1 = new ScrollMagic.Scene({
         triggerElement: "#section-1",
@@ -166,18 +166,7 @@ $(document).ready(function () {
 
     })
 
-   .setPin(".slide-3 .leader .before")
-   .addIndicators({ name: "Dot" }) // add indicators (requires plugin)
-   .addTo(controller);
-
-   var menu = new ScrollMagic.Scene({
-        triggerElement: ".slide-3",
-        triggerHook: 0.1,
-        offset: 0,
-        duration: "600%"
-
-    })
-   .setPin(".slide-3 .leader ul")
+   .setPin(".slide-3 #leader-container .pin-container")
    .addIndicators({ name: "Menu" }) // add indicators (requires plugin)
    .addTo(controller);
 

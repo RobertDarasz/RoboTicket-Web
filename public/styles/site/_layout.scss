@@ -140,7 +140,7 @@ main{
 	
     & > section {
         position:relative;
-        padding:0px 15px;
+        //padding:0px 15px;
     }
     @keyframes animate-screen {
     	from {top: 0;}
@@ -219,8 +219,8 @@ main{
 				position:relative;
 				padding-left:70px;
 				font-weight:100;
-				font-size:3rem;
-				line-height:4rem;
+				font-size:4rem;
+				line-height:5rem;
 				color:#fff;
 				text-shadow: 2px 2px 1px rgba(0,0,0,0.2);
 		
@@ -427,69 +427,23 @@ main{
     }
     .slide.slide-3 {
 
-        //padding:280px 0px;
- 		//min-height:800px;
- 		//height:calc(100vh - 70px);
 		background: #fff;
-    	//background-image:url(../images/test.jpg);
-    	//background-attachment:fixed;
-    	//background-size:cover;
    		z-index:6;
-   		
-   		.container {
-   			position:relative;
-   			padding-bottom: 60vh!important;
-   		}
-   		.leader {
-			position:absolute;
-			top:200px;
-			bottom:200px;
-			width:1px;
-			background-color:$primary-color;
-			left: 0;
-			z-index:20;
-
-			ul {
-				list-style:none;
-				min-width:150px;
-				padding-left:15px;
-				li {
-					a {
-						color:$primary-color;
-						display:block;
-						border:1px solid $primary-color;
-						padding:10px 10px;
-						margin:10px 0px;
-						text-align:center;
-						font-size:0.9rem;
-
-						&.active {
-							background:$primary-color;
-							color:#fff;
-						}
-					}
-
-				}
-			}
-			.before, .after {
-				width:10px;
-				height:10px;
+   		.image-slide {
 				position:absolute;
-				border:1px solid $primary-color;
-				border-radius:100%;
-				left:-4px;
-				display:block;
+				bottom:0px;
+				width:100%;
+				bottom:0;
+
 			}
-			.before{
-				top:-10px;
-				background:#fff;
-			}
-			.after{
-				bottom:-10px;
-			}
-   		}
+
+   		
 			section {
-				padding-left:200px;
+				position:relative;
+				.container {
+					padding-left:200px;
+				}
+				
 			}
 			
 			.panel {
@@ -506,7 +460,82 @@ main{
 					//position: absolute;
 					//transform: translate(-50%, 50%);
 				}
-				.features-list {
+				
+
+			}
+			#leader-container {
+				position:absolute;
+				top:0px;
+				bottom:0px;
+				width:100%;
+				.container {
+					//margin:200px auto;
+					height:100%;
+					position:relative;
+					.leader {
+						position:absolute;
+						top:150px;
+						bottom:200px;
+						width:1px;
+						background-color:$primary-color;
+						z-index:20;
+
+						ul {
+							list-style:none;
+							min-width:150px;
+							padding-left:15px;
+							li {
+								a {
+									color:$primary-color;
+									display:block;
+									border:1px solid $primary-color;
+									padding:10px 10px;
+									margin:10px 0px;
+									text-align:center;
+									font-size:0.9rem;
+
+									&.active {
+										background:$primary-color;
+										color:#fff;
+									}
+								}
+
+							}
+						}
+						.before, .after {
+							width:10px;
+							height:10px;
+							position:absolute;
+							border:1px solid $primary-color;
+							border-radius:100%;
+							left:-4px;
+							display:block;
+						}
+						.before{
+							top:-10px;
+							background:#fff;
+						}
+						.after{
+							bottom:-10px;
+						}
+					}
+				}
+			}
+			#section-1 {
+				background-image:url(../images/football.jpg);
+				background-repeat:no-repeat;
+				background-position:right center;
+				background-size:contain;
+			}
+			#section-2 {
+					background-image:url(../images/football.jpg);
+					background-repeat:no-repeat;
+					background-position:right center;
+					background-size:contain;
+					height:auto;
+				.panel {
+					height:auto;
+					.features-list {
 					  padding: 0;
 					  margin: 0;
 					  list-style: none;
@@ -534,6 +563,7 @@ main{
 						  .box {
 							align-items: center;
 						  	border:1px solid #ddd;
+						  	background:#fff;
 						  	padding:10px;
 						  	height:300px;
 						  	width:300px;
@@ -545,15 +575,15 @@ main{
 
 					}
 				}
-
-			}
-		   			
-			#section-2 {
-					height:auto;
-				.panel {
-					height:auto;
 				
 				}
+			}
+			#section-3 {
+				background-image:url(../images/football.jpg);
+				background-repeat:no-repeat;
+				background-position:right center;
+				background-size:contain;
+				padding-bottom: 70vh;
 			}
    			.logos {
    				margin-right:20px;
@@ -909,10 +939,10 @@ main{
        			padding-left:0px;
        		}
 			.container {
-				background:rgba(255,255,255,0.8);
+				//background:rgba(255,255,255,0.8);
 				//padding:20px; 
 				//margin:20px;
-				z-index:9
+				//z-index:9
 			}
     }
 	
