@@ -2569,7 +2569,7 @@ main {
       position: relative;
       color: #fff;
       font-size: 1rem;
-      padding: 100px 0px 250px 0px; }
+      padding: 100px 15px 250px 15px; }
       main .slide.slide-2 .container h2 {
         color: #fff; }
       main .slide.slide-2 .container p {
@@ -2918,7 +2918,9 @@ main {
       main .slide.slide-3 .panel {
         padding: 0px; }
       main .slide.slide-3 section {
-        padding-left: 0px; } }
+        padding-left: 0px; }
+        main .slide.slide-3 section .container {
+          padding-left: 15px; } }
 
 #slides {
   position: relative;
