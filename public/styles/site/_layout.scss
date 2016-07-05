@@ -445,7 +445,20 @@ main{
 				}
 				
 			}
-			
+			.divided {
+				width:100%;
+				background-size:cover;
+				background-attachment:fixed;
+				height:300px;
+				margin:100px 0px;
+
+				&.stadium {
+					background-image:url(../images/stadium.jpg);
+				}
+				&.reader {
+					background-image:url(../images/reader.jpg);
+				}
+			}
 			.panel {
 				padding:100px 0px;
 				position:absolute;
@@ -493,6 +506,7 @@ main{
 									margin:10px 0px;
 									text-align:center;
 									font-size:0.9rem;
+									background:#fff;
 
 									&.active {
 										background:$primary-color;

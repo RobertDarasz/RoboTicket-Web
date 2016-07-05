@@ -162,7 +162,7 @@ $(document).ready(function () {
         triggerElement: ".slide-3",
         triggerHook: 0.1,
         offset: 0,
-        duration: "600%"
+        duration: "700%"
 
     })
 
