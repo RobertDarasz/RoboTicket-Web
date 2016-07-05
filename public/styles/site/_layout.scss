@@ -522,13 +522,13 @@ main{
 				}
 			}
 			#section-1 {
-				background-image:url(../images/football.jpg);
+				//background-image:url(../images/football.jpg);
 				background-repeat:no-repeat;
 				background-position:right center;
 				background-size:contain;
 			}
 			#section-2 {
-					background-image:url(../images/football.jpg);
+					//background-image:url(../images/football.jpg);
 					background-repeat:no-repeat;
 					background-position:right center;
 					background-size:contain;
@@ -554,22 +554,32 @@ main{
 					  width: 300px;
 					  margin-top: 10px;
 					  margin-top: 10px;
-						text-align: center;
-						margin-bottom:20px;
+					text-align: center;
+					margin-bottom:20px;
 
 							h3 {
-								font-size:1rem;
+								font-size:0.9rem;
+								display:block;
+								width:100%;
+								padding:10px;
+								border:1px solid $primary-color;
+								text-transform:uppercase;
+								color:$primary-color;
+							}
+							p {
+								font-size:0.8rem;
+								text-align:left;
+								line-height:1.5rem;
 							}
 						  .box {
 							align-items: center;
-						  	border:1px solid #ddd;
+						  	//border:1px solid #ddd;
 						  	background:#fff;
 						  	padding:10px;
-						  	height:300px;
-						  	width:300px;
+						  
 						  	img {
 						  		width:100%;
-						  		display:block;
+						  		display:none;
 						  	}
 						  }
 
@@ -579,41 +589,22 @@ main{
 				}
 			}
 			#section-3 {
-				background-image:url(../images/football.jpg);
+				//background-image:url(../images/football.jpg);
 				background-repeat:no-repeat;
 				background-position:right center;
 				background-size:contain;
 				padding-bottom: 70vh;
 			}
-   			.logos {
-   				margin-right:20px;
-   				padding-right:20px;
-   				border-right: 1px solid #ddd;
-   				float:left;
-   				width:200px;
-   				img {
-   					float:left; 
-   				}
-   			}
-   			
-			.seat-animated {
-				position:absolute;
-				right:0;
-				top:0;
-				bottom:0;
+   			.external {
+   				margin-top:30px;
 				img {
-					height:100px;
-					width:auto;
-				}
-				.seatMy {
-					position:absolute;
-					top:0px;
-				}
-				.seatEmpty {
-					position:absolute;
-					bottom:0;	
+					max-width:200px;
+					max-height:80px;
+					margin-right:20px;
 				}
 			}
+   			 
+
 
    		
     }
@@ -624,6 +615,18 @@ main{
        	//background:rgba(195, 26, 97, 0.72);
        	z-index:8;
 		padding:0px!important;
+		.container {
+			position:relative;
+			.constant-text {
+				position:absolute;
+				bottom:100px;
+				z-index:10;
+				width:100%;
+				color:#fff;
+				padding:20px 0;
+			}
+			
+		}
 		.stateController {
 			height:calc(100vh - 70px);
 			width:100%;

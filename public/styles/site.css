@@ -2640,12 +2640,10 @@ main {
           main .slide.slide-3 #leader-container .container .leader .after {
             bottom: -10px; }
     main .slide.slide-3 #section-1 {
-      background-image: url(../images/football.jpg);
       background-repeat: no-repeat;
       background-position: right center;
       background-size: contain; }
     main .slide.slide-3 #section-2 {
-      background-image: url(../images/football.jpg);
       background-repeat: no-repeat;
       background-position: right center;
       background-size: contain;
@@ -2671,51 +2669,50 @@ main {
             text-align: center;
             margin-bottom: 20px; }
             main .slide.slide-3 #section-2 .panel .features-list .item h3 {
-              font-size: 1rem; }
+              font-size: 0.9rem;
+              display: block;
+              width: 100%;
+              padding: 10px;
+              border: 1px solid #c31a61;
+              text-transform: uppercase;
+              color: #c31a61; }
+            main .slide.slide-3 #section-2 .panel .features-list .item p {
+              font-size: 0.8rem;
+              text-align: left;
+              line-height: 1.5rem; }
             main .slide.slide-3 #section-2 .panel .features-list .item .box {
               align-items: center;
-              border: 1px solid #ddd;
               background: #fff;
-              padding: 10px;
-              height: 300px;
-              width: 300px; }
+              padding: 10px; }
               main .slide.slide-3 #section-2 .panel .features-list .item .box img {
                 width: 100%;
-                display: block; }
+                display: none; }
     main .slide.slide-3 #section-3 {
-      background-image: url(../images/football.jpg);
       background-repeat: no-repeat;
       background-position: right center;
       background-size: contain;
       padding-bottom: 70vh; }
-    main .slide.slide-3 .logos {
-      margin-right: 20px;
-      padding-right: 20px;
-      border-right: 1px solid #ddd;
-      float: left;
-      width: 200px; }
-      main .slide.slide-3 .logos img {
-        float: left; }
-    main .slide.slide-3 .seat-animated {
-      position: absolute;
-      right: 0;
-      top: 0;
-      bottom: 0; }
-      main .slide.slide-3 .seat-animated img {
-        height: 100px;
-        width: auto; }
-      main .slide.slide-3 .seat-animated .seatMy {
-        position: absolute;
-        top: 0px; }
-      main .slide.slide-3 .seat-animated .seatEmpty {
-        position: absolute;
-        bottom: 0; }
+    main .slide.slide-3 .external {
+      margin-top: 30px; }
+      main .slide.slide-3 .external img {
+        max-width: 200px;
+        max-height: 80px;
+        margin-right: 20px; }
   main .slide.slide-4 {
     width: 100%;
     height: calc(100% - 70px);
     min-height: 700px !important;
     z-index: 8;
     padding: 0px !important; }
+    main .slide.slide-4 .container {
+      position: relative; }
+      main .slide.slide-4 .container .constant-text {
+        position: absolute;
+        bottom: 100px;
+        z-index: 10;
+        width: 100%;
+        color: #fff;
+        padding: 20px 0; }
     main .slide.slide-4 .stateController {
       height: calc(100vh - 70px);
       width: 100%;
